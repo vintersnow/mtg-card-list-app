@@ -13,14 +13,13 @@ export default {
 };
 </script>
 
-<style lang='scss'>
+<style lang="scss">
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  /* margin-top: 30px; */
 }
 
 #nav {
@@ -33,5 +32,16 @@ export default {
       color: #42b983;
     }
   }
+}
+
+body {
+  margin: 0;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background-color: var(--surface-a);
+  font-family: var(--font-family);
+  font-weight: 400;
+  color: var(--text-color);
 }
 </style>
