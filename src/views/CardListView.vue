@@ -4,7 +4,7 @@
       :value="filteredRepositories"
       :layout="layout"
       :paginator="true"
-      :rows="9"
+      :rows="12"
     >
       <template #header>
         <div class="p-grid p-nogutter">
@@ -22,7 +22,7 @@
                 <p>{{ slotProps.data.nameJapanese }}</p>
                 <p>{{ slotProps.data.nameEnglish }}</p>
               </div>
-              <span class="product-cost">{{ slotProps.data.cost }}</span>
+              <span class="product-cost">{{ slotProps.data.manaCost }}</span>
             </div>
             <div class="product-grid-item-content">
               <img
@@ -32,10 +32,18 @@
               <div class="product-card-type">{{ slotProps.data.cardType }}</div>
               <!-- <div class="product-description">{{slotProps.data.text}}</div> -->
               <Textarea
-                v-model="slotProps.data.text"
+                v-model="slotProps.data.textJapanese"
                 rows="5"
                 cols="35"
                 disabled
+                v-if="slotProps.data.textJapanese != ''"
+              />
+              <Textarea
+                v-model="slotProps.data.textEnglish"
+                rows="5"
+                cols="40"
+                disabled
+                v-else
               />
             </div>
             <div class="product-grid-item-bottom">

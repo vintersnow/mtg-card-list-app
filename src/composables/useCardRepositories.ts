@@ -1,18 +1,17 @@
 import { ref, onMounted, Ref } from "vue";
-import { CardSimple } from "@/models";
+import { CardDetail } from "@/models";
+import CardListService from "@/services/CardDataService";
 
 export default function useCardRepositories(): {
-  repositories: Ref<CardSimple[]>;
+  repositories: Ref<CardDetail[]>;
   getCardRepositories: () => void;
 } {
-  const repositories: Ref<CardSimple[]> = ref([]);
+  const repositories: Ref<CardDetail[]> = ref([]);
+  const services = new CardListService();
   const getCardRepositories = async () => {
-    repositories.value = [
-      { id: 0, name: "aaa" },
-      { id: 1, name: "bbb" },
-      { id: 2, name: "bbb aaa" },
-      { id: 3, name: "bbb aaa" },
-    ];
+    repositories.value = await services.getCardList();
+    console.log("finished loading");
+    console.log(repositories.value[0])
   };
 
   onMounted(getCardRepositories);

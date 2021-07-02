@@ -1,18 +1,20 @@
 interface CardDetail {
-  id: number;
   cardType: string;
   nameEnglish: string;
   nameJapanese: string;
-  cost: string;
+  manaCost: string;
   power: string;
   toughness: string;
   price: number;
-  text: string;
+  textEnglish: string;
+  testJapanese: string;
+  type: string;
+  types: string[]
 }
 
 interface CardSimple {
   id: number;
-  name: string;
+  nameEnglish: string;
 }
 
 export { CardSimple, CardDetail };

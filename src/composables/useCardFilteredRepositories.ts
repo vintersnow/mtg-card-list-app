@@ -2,7 +2,7 @@ import { ref, Ref, watch } from "vue";
 import { CardSimple, CardDetail } from "@/models";
 
 export default function useCardFilterRepositories(
-  repositories: Ref<CardSimple[]>
+  repositories: Ref<CardDetail[]>
 ): {
   filteredRepositories: Ref<CardDetail[]>;
   searchText: Ref<string>;
@@ -12,27 +12,14 @@ export default function useCardFilterRepositories(
   const filteredRepositories: Ref<CardDetail[]> = ref([]);
 
   const filterAndGetCadDetail = async () => {
-    // console.log(searchText, repositories, filteredRepositories)
     if (searchText.value === "") {
       filteredRepositories.value = [];
       return;
     }
-    filteredRepositories.value = repositories.value
-      .filter((card: CardSimple) => card.name.match(searchText.value))
-      .map((card) => {
-        const ret: CardDetail = {
-          id: card.id,
-          cardType: "ソーサリー",
-          nameEnglish: card.name + "_en",
-          nameJapanese: card.name + "_ja",
-          text: "placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder",
-          cost: "4RR",
-          power: "",
-          toughness: "",
-          price: 10,
-        };
-        return ret;
-      });
+    filteredRepositories.value = repositories.value.filter((card: CardDetail) => {
+      const regex = RegExp(searchText.value, 'i')
+      return card.nameEnglish.match(regex) || card.nameJapanese.match(regex)
+    });
   };
 
   watch(searchText, filterAndGetCadDetail);
