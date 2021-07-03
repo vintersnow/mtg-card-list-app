@@ -6,7 +6,7 @@ const routes: Array<RouteRecordRaw> = [
     path: "/",
     name: "CardList",
     component: CardListView,
-    meta: { title: "MtG Cards" }
+    meta: { title: "MtG Cards" },
   },
   {
     path: "/about",
@@ -16,7 +16,7 @@ const routes: Array<RouteRecordRaw> = [
     // which is lazy-loaded when the route is visited.
     component: () =>
       import(/* webpackChunkName: "about" */ "../views/About.vue"),
-    meta: { title: "About" }
+    meta: { title: "About" },
   },
 ];
 
