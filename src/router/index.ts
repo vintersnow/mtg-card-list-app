@@ -1,12 +1,11 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
-import Home from "../views/Home.vue";
 import CardListView from "../views/CardListView.vue";
 
 const routes: Array<RouteRecordRaw> = [
   {
     path: "/",
-    name: "Home",
-    component: Home,
+    name: "CardList",
+    component: CardListView,
   },
   {
     path: "/about",
@@ -16,11 +15,6 @@ const routes: Array<RouteRecordRaw> = [
     // which is lazy-loaded when the route is visited.
     component: () =>
       import(/* webpackChunkName: "about" */ "../views/About.vue"),
-  },
-  {
-    path: "/cardlist",
-    name: "CardList",
-    component: CardListView,
   },
 ];
 

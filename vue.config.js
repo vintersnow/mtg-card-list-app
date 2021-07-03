@@ -1,6 +1,4 @@
 module.exports = {
   publicPath:
-    process.env.NODE_ENV === "production"
-      ? "/" //任意
-      : "/",
+    process.env.NODE_ENV === "production" ? "/mtg-card-list-app/" : "/",
 };

@@ -15,7 +15,7 @@
       </template>
 
       <template #grid="slotProps">
-        <div class="p-col-12 p-md-3">
+        <div class="p-col-12 p-md-4 p-lg-3">
           <div class="product-grid-item inner-card">
             <div class="product-grid-item-top">
               <div class="p-col-10 p-md-10 product-name">
@@ -30,8 +30,8 @@
                 :alt="slotProps.data.nameEnglish"
               />
               <div class="product-card-type">{{ slotProps.data.cardType }}</div>
-              <!-- <div class="product-description">{{slotProps.data.text}}</div> -->
               <Textarea
+                style="opacity: 1.0"
                 v-model="slotProps.data.textJapanese"
                 rows="5"
                 cols="35"
@@ -39,9 +39,10 @@
                 v-if="slotProps.data.textJapanese != ''"
               />
               <Textarea
+                style="opacity: 1.0"
                 v-model="slotProps.data.textEnglish"
                 rows="5"
-                cols="40"
+                cols="35"
                 disabled
                 v-else
               />
@@ -90,6 +91,10 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
+.card-text {
+  opacity:  0.8;
+}
+
 .card {
   /* background: #ffffff; */
   padding: 2rem;

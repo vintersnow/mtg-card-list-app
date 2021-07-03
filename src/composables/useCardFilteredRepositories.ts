@@ -1,5 +1,5 @@
 import { ref, Ref, watch } from "vue";
-import { CardSimple, CardDetail } from "@/models";
+import { CardDetail } from "@/models";
 
 export default function useCardFilterRepositories(
   repositories: Ref<CardDetail[]>
@@ -16,9 +16,9 @@ export default function useCardFilterRepositories(
       filteredRepositories.value = [];
       return;
     }
+    const regex = RegExp(searchText.value.replace(/\s+/, ".*"), "i");
     filteredRepositories.value = repositories.value.filter(
       (card: CardDetail) => {
-        const regex = RegExp(searchText.value, "i");
         return card.nameEnglish.match(regex) || card.nameJapanese.match(regex);
       }
     );
