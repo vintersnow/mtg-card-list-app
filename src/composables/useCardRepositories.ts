@@ -11,7 +11,7 @@ export default function useCardRepositories(): {
   const getCardRepositories = async () => {
     repositories.value = await services.getCardList();
     console.log("finished loading");
-    console.log(repositories.value[0])
+    console.log(repositories.value[0]);
   };
 
   onMounted(getCardRepositories);

@@ -16,10 +16,12 @@ export default function useCardFilterRepositories(
       filteredRepositories.value = [];
       return;
     }
-    filteredRepositories.value = repositories.value.filter((card: CardDetail) => {
-      const regex = RegExp(searchText.value, 'i')
-      return card.nameEnglish.match(regex) || card.nameJapanese.match(regex)
-    });
+    filteredRepositories.value = repositories.value.filter(
+      (card: CardDetail) => {
+        const regex = RegExp(searchText.value, "i");
+        return card.nameEnglish.match(regex) || card.nameJapanese.match(regex);
+      }
+    );
   };
 
   watch(searchText, filterAndGetCadDetail);

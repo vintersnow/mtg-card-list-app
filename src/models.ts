@@ -9,7 +9,7 @@ interface CardDetail {
   textEnglish: string;
   testJapanese: string;
   type: string;
-  types: string[]
+  types: string[];
 }
 
 interface CardSimple {
