@@ -2,7 +2,7 @@
   <div class="about">
     <h1>About this app</h1>
     <p>
-      MTGJSONからダウンロードしてきた全MtGのカードリストを検索するアプリです。
+    <a href="https://mtgjson.com">MTGJSON</a>からダウンロードしてきた全MtGのカードリストを検索するアプリです。
     </p>
     <p>
       バグ報告などは<a
