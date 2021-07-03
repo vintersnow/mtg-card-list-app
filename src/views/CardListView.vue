@@ -31,7 +31,7 @@
               />
               <div class="product-card-type">{{ slotProps.data.cardType }}</div>
               <Textarea
-                style="opacity: 1.0"
+                style="opacity: 1"
                 v-model="slotProps.data.textJapanese"
                 rows="5"
                 cols="35"
@@ -39,7 +39,7 @@
                 v-if="slotProps.data.textJapanese != ''"
               />
               <Textarea
-                style="opacity: 1.0"
+                style="opacity: 1"
                 v-model="slotProps.data.textEnglish"
                 rows="5"
                 cols="35"
@@ -92,7 +92,7 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 .card-text {
-  opacity:  0.8;
+  opacity: 0.8;
 }
 
 .card {
