@@ -4,7 +4,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/mtg-card-list-app/css/chunk-vendors.d789dbc4.css"
   },
   {
-    "revision": "530ef1507cda1560d60d",
+    "revision": "5d26082204777b979edc",
     "url": "/mtg-card-list-app/css/index.181ba270.css"
   },
   {
@@ -36,20 +36,20 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/mtg-card-list-app/img/primeicons.25954ab5.svg"
   },
   {
-    "revision": "24bb0bb3c2f582440fa391bbb10abafc",
+    "revision": "a5cdd6ed6ecc1c66b68c75e46051a120",
     "url": "/mtg-card-list-app/index.html"
   },
   {
-    "revision": "a9e2f9bfa2cd443bf97f",
-    "url": "/mtg-card-list-app/js/about.f1a30d31.js"
+    "revision": "a42dc9839f15cdc3c4ba",
+    "url": "/mtg-card-list-app/js/about.269f6ce0.js"
   },
   {
     "revision": "fae49842a70c220fbfeb",
     "url": "/mtg-card-list-app/js/chunk-vendors.d6b72e64.js"
   },
   {
-    "revision": "530ef1507cda1560d60d",
-    "url": "/mtg-card-list-app/js/index.91323548.js"
+    "revision": "5d26082204777b979edc",
+    "url": "/mtg-card-list-app/js/index.ab44e69c.js"
   },
   {
     "revision": "9d8ee20a81073fa1fba4c790cc035af4",

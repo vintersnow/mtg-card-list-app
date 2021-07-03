@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/mtg-card-list-app/precache-manifest.1e7220a80133e2f5019cbc70d4660c0f.js"
+  "/mtg-card-list-app/precache-manifest.93de53e7c5470143cb81422c1c58ee1b.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "card_searcher"});
