@@ -26,4 +26,8 @@ jobs:
       - run: npm ci --also=dev
       # - run: npm test
       - run: npm run build
-      - run: npm run deploy
+      - name: Deploy to github pages
+        uses: peaceiris/actions-gh-pages@v3
+        with: 
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: dist
