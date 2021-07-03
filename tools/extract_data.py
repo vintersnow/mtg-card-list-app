@@ -82,7 +82,7 @@ class FormattedCard:
 
 def main():
     cards = []
-    with open("AtomicCards.json") as f:
+    with open("../../cardlist/json/AtomicCards.json") as f:
         data = json.load(f)
         for name, value in data["data"].items():
             for c in value:
