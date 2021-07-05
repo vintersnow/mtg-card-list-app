@@ -11,7 +11,7 @@ async function getCachedData(
     throw new Error("No Cache");
   }
 
-  return await cachedResponse.json();
+  return (await cachedResponse.json()).map(formatCard);
 }
 
 async function deleteOldCaches(currentCache: string) {
@@ -26,6 +26,11 @@ async function deleteOldCaches(currentCache: string) {
 
     caches.delete(key);
   }
+}
+
+function formatCard(card: CardDetail): CardDetail {
+  card.manaCost = card.manaCost.replaceAll(/{|}/g, "");
+  return card;
 }
 
 export default class CardListService {

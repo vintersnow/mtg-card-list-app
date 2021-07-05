@@ -8,52 +8,26 @@
     >
       <template #header>
         <div class="p-grid p-nogutter">
-          <div class="p-col-6" style="text-align: left">
-            <InputText type="text" v-model="searchText" />
+          <div class="p-col-3" style="text-align: left">
+            <InputText
+              type="text"
+              v-model="searchObj.cardName"
+              placeholder="Card Name"
+            />
+          </div>
+          <div class="p-col-3" style="text-align: left">
+            <InputText
+              type="text"
+              v-model="searchObj.text"
+              placeholder="Text"
+            />
           </div>
         </div>
       </template>
 
       <template #grid="slotProps">
         <div class="p-col-12 p-md-4 p-lg-3">
-          <div class="product-grid-item inner-card">
-            <div class="product-grid-item-top">
-              <div class="p-col-10 p-md-10 product-name">
-                <p>{{ slotProps.data.nameJapanese }}</p>
-                <p>{{ slotProps.data.nameEnglish }}</p>
-              </div>
-              <span class="product-cost">{{ slotProps.data.manaCost }}</span>
-            </div>
-            <div class="product-grid-item-content">
-              <img
-                src="https://www.primefaces.org/wp-content/uploads/2020/05/placeholder.png"
-                :alt="slotProps.data.nameEnglish"
-              />
-              <div class="product-card-type">{{ slotProps.data.cardType }}</div>
-              <Textarea
-                style="opacity: 1"
-                v-model="slotProps.data.textJapanese"
-                rows="5"
-                cols="35"
-                disabled
-                v-if="slotProps.data.textJapanese != ''"
-              />
-              <Textarea
-                style="opacity: 1"
-                v-model="slotProps.data.textEnglish"
-                rows="5"
-                cols="35"
-                disabled
-                v-else
-              />
-            </div>
-            <div class="product-grid-item-bottom">
-              <span class="product-price">${{ slotProps.data.price }}</span>
-              <span class="product-stats" v-if="slotProps.data.power !== ''"
-                >{{ slotProps.data.power }}/{{ slotProps.data.toughness }}</span
-              >
-            </div>
-          </div>
+          <CardItem :card="slotProps.data" />
         </div>
       </template>
     </DataView>
@@ -66,16 +40,17 @@ import InputText from "primevue/inputtext";
 import DataView from "primevue/dataview";
 import useCardRepositories from "@/composables/useCardRepositories";
 import useCardFilterRepositories from "@/composables/useCardFilteredRepositories";
-import Textarea from "primevue/textarea";
+// import Textarea from "primevue/textarea";
+import CardItem from "@/components/CardItem.vue";
 
 export default defineComponent({
   name: "CardListView",
-  components: { DataView, InputText, Textarea },
+  components: { DataView, InputText, CardItem },
   setup() {
     const layout = ref("grid");
 
     const { repositories, getCardRepositories } = useCardRepositories();
-    const { filteredRepositories, searchText, filterAndGetCadDetail } =
+    const { filteredRepositories, searchObj, filterAndGetCadDetail } =
       useCardFilterRepositories(repositories);
 
     return {
@@ -84,7 +59,7 @@ export default defineComponent({
       filteredRepositories,
       filterAndGetCadDetail,
       layout,
-      searchText,
+      searchObj,
     };
   },
 });

@@ -7,7 +7,7 @@ interface CardDetail {
   toughness: string;
   price: number;
   textEnglish: string;
-  testJapanese: string;
+  textJapanese: string;
   type: string;
   types: string[];
 }
