@@ -35,7 +35,8 @@ function formatCard(card: CardDetail): CardDetail {
 
 export default class CardListService {
   async getCardList(): Promise<CardDetail[]> {
-    const version = "20210701";
+    const version = process.env.VUE_APP_CARD_LIST_VERSION;
+    console.log(version);
     const cacheName = `cardlist-${version}`;
     const url = `data/${version}.json`;
 

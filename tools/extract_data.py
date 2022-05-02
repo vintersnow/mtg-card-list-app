@@ -3,7 +3,7 @@ from dataclasses import dataclass, is_dataclass, asdict
 from typing import List, Dict
 from collections import defaultdict
 import sys
-
+import argparse
 
 def custom_default(o):
     if is_dataclass(o):
@@ -82,7 +82,10 @@ class FormattedCard:
 
 def main():
     cards = []
-    with open("../../cardlist/json/AtomicCards.json") as f:
+    parser = argparse.ArgumentParser()
+    parser.add_argument('data_path', type=str)
+    args = parser.parse_args()
+    with open(args.data_path) as f:
         data = json.load(f)
         for name, value in data["data"].items():
             for c in value:
@@ -91,7 +94,6 @@ def main():
                 cards.append(card)
 
     formated_cards = [FormattedCard.create(c) for c in cards]
-    print(formated_cards[0], file=sys.stderr)
 
     print(json.dumps(formated_cards, default=custom_default))
 
