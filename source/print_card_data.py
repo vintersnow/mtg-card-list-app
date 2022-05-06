@@ -49,4 +49,5 @@ def match_identifier(card, identifier):
 if __name__ == "__main__":
     card_name = "Life of Toshiro Umezawa // Memory of Toshiro"
     card_name = "Boseiju, Who Endures"
+    card_name = "Courier's Briefcase"
     show(card_name)

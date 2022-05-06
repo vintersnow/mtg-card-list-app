@@ -71,17 +71,14 @@ const hareruyaURL = computed(() => {
     </div>
     <div class="columns">
       <div class="column is-half">
+        <a class="title is-5" :href="wisdomURL" target="_blank">Wisdom</a>
         <OuterHTMLView :url="wisdomURL" v-if="wisdomURL !== null" />
       </div>
       <div class="column is-half">
+        <a class="title is-5" :href="hareruyaURL" target="_blank">晴れる屋</a>
         <OuterHTMLView :url="hareruyaURL" v-if="hareruyaURL !== null" />
       </div>
     </div>
-    <!-- <div>                                                                                      -->
-    <!--   <iframe width="600" height="300" :src="wisdomURL" frameborder="0"                        -->
-    <!--     allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" -->
-    <!--     v-if="wisdomURL !== null"></iframe>                                                    -->
-    <!-- </div>                                                                                     -->
   </div>
 </template>
 
