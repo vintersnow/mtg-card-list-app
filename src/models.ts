@@ -1,4 +1,5 @@
-interface CardDetail {
+export interface CardDetail {
+  id: string;
   cardType: string;
   nameEnglish: string;
   nameJapanese: string;
@@ -10,11 +11,15 @@ interface CardDetail {
   textJapanese: string;
   type: string;
   types: string[];
+  image_urls: string[];
 }
 
-interface CardSimple {
+export interface CardSimple {
   id: number;
   nameEnglish: string;
 }
 
-export { CardSimple, CardDetail };
+export interface CardFilterObject {
+  cardName: string;
+  text: string;
+}
