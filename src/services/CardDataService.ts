@@ -38,7 +38,7 @@ export default class CardListLoader {
     const version = import.meta.env.VITE_CARD_LIST_VERSION;
     console.log(version);
     const cacheName = `cardlist-${version}`;
-    const url = `/data/${version}.json`;
+    const url = `data/${version}.json`;
 
     try {
       const cachedData = await getCachedData(cacheName, url);

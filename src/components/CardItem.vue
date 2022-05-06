@@ -30,9 +30,12 @@ const hasJapaneseText = computed(() => {
           </figure>
         </div>
         <div class="media-content">
-          <p class="title is-5 clickable" @click="copyToClipboard(props.card.nameEnglish)">{{ props.card.nameEnglish }}
+          <p class="title is-5 clickable" @click.stop="copyToClipboard(props.card.nameEnglish)">{{
+            props.card.nameEnglish
+          }}
           </p>
-          <p class="subtitle is-6 clickable" v-if="hasJapaneseTitle" @click="copyToClipboard(props.card.nameJapanese)">
+          <p class="subtitle is-6 clickable" v-if="hasJapaneseTitle"
+            @click.stop="copyToClipboard(props.card.nameJapanese)">
             {{
               props.card.nameJapanese
             }}</p>
