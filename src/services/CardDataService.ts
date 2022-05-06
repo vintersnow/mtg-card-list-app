@@ -1,4 +1,4 @@
-import { CardDetail } from "@/models";
+import type { CardDetail } from "@/models";
 
 async function getCachedData(
   cacheName: string,
@@ -33,12 +33,12 @@ function formatCard(card: CardDetail): CardDetail {
   return card;
 }
 
-export default class CardListService {
+export default class CardListLoader {
   async getCardList(): Promise<CardDetail[]> {
-    const version = process.env.VUE_APP_CARD_LIST_VERSION;
+    const version = import.meta.env.VITE_CARD_LIST_VERSION;
     console.log(version);
     const cacheName = `cardlist-${version}`;
-    const url = `data/${version}.json`;
+    const url = `/data/${version}.json`;
 
     try {
       const cachedData = await getCachedData(cacheName, url);
@@ -54,7 +54,7 @@ export default class CardListService {
     const cachedData = getCachedData(cacheName, url);
     await deleteOldCaches(cacheName);
 
-    console.log(cachedData);
+    // console.log(cachedData);
     return cachedData;
   }
 }

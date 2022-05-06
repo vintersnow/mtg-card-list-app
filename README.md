@@ -34,7 +34,11 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 2. create dump data
 
 ```
-python tools/extract_data.py AtomicCards.json > public/data/20220502.json
+python tools/extract_data.py source/AtomicCards.json source/AllIdentifiers.json > public/data/20220502.json
 ```
 
 3. change env file
+
+# Host
+
+This service is hosted on [github pages](https://vintersnow.github.io/mtg-card-list-app/)
